@@ -5,7 +5,7 @@ service: green-api-interface
 
 automatic_scaling:
   min_instances: 1
-  max_instances: 3
+  max_instances: 1
 
 env_variables:
   NODE_ENV: production
@@ -16,8 +16,11 @@ handlers:
   secure: always
 
 health_check:
-  enable_health_check: True
+  enable_health_check: False
+
+readiness_check:
+  path: "/health"
   check_interval_sec: 30
   timeout_sec: 4
-  unhealthy_threshold: 2
-  healthy_threshold: 2
+  failure_threshold: 2
+  success_threshold: 2
