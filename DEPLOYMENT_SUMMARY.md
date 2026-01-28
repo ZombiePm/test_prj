@@ -64,3 +64,18 @@ All original functionality remains intact:
 - **Local development**: Uses port 3000 by default
 - **App Platform**: Automatically uses PORT environment variable
 - **Node.js**: Compatible with versions >= 14.0.0
+
+## Troubleshooting Common Issues
+
+### HTTP 404 Error
+If you see a 404 error after deployment:
+1. Check that all files are committed to Git
+2. Verify the build logs in Timeweb Cloud control panel
+3. Ensure package.json has the required "build" script
+4. Check that the application starts without errors
+
+### Health Check Failures
+The application now includes:
+- `/health` endpoint for readiness checks
+- Proper error handling
+- Logging for debugging

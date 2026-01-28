@@ -7,6 +7,13 @@ const PORT = process.env.PORT || 3000;
 const server = http.createServer((req, res) => {
     console.log(`Request: ${req.method} ${req.url}`);
     
+    // Health check endpoint
+    if (req.url === '/health' || req.url === '/health/') {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ status: 'ok', timestamp: new Date().toISOString() }));
+        return;
+    }
+    
     // Always serve index.html for any request (simple approach)
     fs.readFile(path.join(__dirname, 'index.html'), (err, data) => {
         if (err) {
