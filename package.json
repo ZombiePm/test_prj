@@ -1,0 +1,23 @@
+{
+  "name": "green-api-test-interface",
+  "version": "1.0.0",
+  "description": "GREEN-API Test Interface for Timeweb Cloud App Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "green-api",
+    "whatsapp",
+    "api",
+    "interface",
+    "timeweb",
+    "app-platform"
+  ],
+  "author": "DevOps Developer",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

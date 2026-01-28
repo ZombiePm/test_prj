@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
     console.log(`Request: ${req.method} ${req.url}`);
@@ -23,5 +23,6 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
+        console.log(`Access the application at: http://localhost:${PORT}`);
     console.log('Open your browser and navigate to the URL above to test the GREEN-API interface');
 });
